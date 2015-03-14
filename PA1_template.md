@@ -3,7 +3,6 @@
 
 ## Loading and preprocessing the data
 
-
 ```r
 unzip(zipfile="activity.zip")
 data <- read.csv("activity.csv")
@@ -15,7 +14,7 @@ data <- read.csv("activity.csv")
 ```r
 library(ggplot2)
 total.steps <- tapply(data$steps, data$date, FUN=sum, na.rm=TRUE)
-qplot(total.steps, binwidth=1000, xlab="total number of steps taken each day")
+qplot(total.steps, col = "red",binwidth=1000, xlab="total number of steps taken each day")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-1-1.png) 
@@ -102,7 +101,7 @@ Now, using the filled data set, let's make a histogram of the total number of st
 
 ```r
 total.steps <- tapply(filled.data$steps, filled.data$date, FUN=sum)
-qplot(total.steps, binwidth=1000, xlab="total number of steps taken each day")
+qplot(total.steps, col = "red", binwidth=1000, xlab="total number of steps taken each day")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
